@@ -1,17 +1,17 @@
-08-bit instruction arithmetik (22)
-+--------------+-------------------------------------------------------------------------------+---------------------------------------+
-| carry        | non                                                                           | yes                                   |
-+--------------+---------------------------------------+---------------------------------------+-------------------+-------------------+
-| operand      | direction                             | revers                                | direction                             | revers            |
-+--------------+-------------------+-------------------+-------------------+-------------------+-------------------+-----+------+------+
-| result       | direction         | revers            | direction         | revers            | direction         | revers            |
-+--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
-| offset       | non | load | push | non | load | push | non | load | push | non | load | push | non | load | push | non | load | push |
-+--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
-| addition     | ADD | ADL  | ...  | ADR | ...  | ARP  | ... | ...  | ...  | ... | ...  | ...  | ADC | ACL  | ACP  | ACR | ARL  | ARP  |
-+--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
-| substraction | SUB | SBL  | ...  | SBR | ...  | SBP  | SRD | SRL  | ...  | SRR | ...  | SRP  | SBC | SCL  | SCP  | SCR | SRL  | SRP  |
-+--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
+08-bit instruction arithmetik (30)
++--------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| carry        | non                                                                           | yes                                                                           |
++--------------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+
+| operand      | direction                             | revers                                | direction                             | revers                                |
++--------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+| result       | direction         | revers            | direction         | revers            | direction         | revers            | direction         | revers            |
++--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
+| offset       | non | load | push | non | load | push | non | load | push | non | load | push | non | load | push | non | load | push | non | load | push | non | load | push |
++--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
+| addition     | ADD | ADL  | ...  | ADR | ...  | ARP  | ... | ...  | ...  | ... | ...  | ...  | ADC | ACL  | ACP  | ... | ...  | ...  | ACR | ARL  | AR2  | ... | ...  | ...  |
++--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
+| substraction | SUB | SBL  | ...  | SBR | ...  | SBP  | SRD | SRL  | ...  | SRR | ...  | SRP  | SBC | SCL  | SCP  | ... | ...  | ...  | SCR | SRL  | SRP  | ... | ...  | ...  |
++--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
 
 ADD - addition of R0 and Rx, the result is placed in R0
 ADL - addition of R0 and Rx, the numbers of all registers are incremented, the result is placed in R0
@@ -25,16 +25,20 @@ ACP - addition R0, R1 and Rx, the result is placed in R1, all register numbers a
 
 ACR - addition R0, R1 and Rx, the result is placed in Rx, the carry bits are placed in R0
 ARL - addition of R0 and Rx, the result is placed in Rx, the numbers of all registers are incremented, the carry bits are placed in R0
-ARP - addition R0, R1 and Rx, the result is placed in Rx, all register numbers are decremented, the carry bits are placed in R0
+AR2 - addition R0, R1 and Rx, the result is placed in Rx, all register numbers are decremented
 
-SUB - subtraction from register R0 of register Rx, the result is placed in R0
-SBL - subtraction from register R0 of register Rx, the numbers of all registers are incremented, the result is placed in R0
+SUB - subtract from register R0 of register Rx, the result is placed in R0
+SBL - subtract from register R0 of register Rx, the numbers of all registers are incremented, the result is placed in R0
 
-SBR - subtraction from register R0 of register Rx, the result is placed in Rx
-SBP - subtraction from register R0 of register Rx, result is placed in Rx, all register numbers are decremented
+SBR - subtract from register R0 of register Rx, the result is placed in Rx
+SBP - subtract from register R0 of register Rx, result is placed in Rx, all register numbers are decremented
 
-SRD - subtraction from register Rx of register R0, the result is placed in R0
-SRL - subtraction from register Rx of register R0, the numbers of all registers are incremented, the result is placed in R0
+SRD - subtract from register Rx of register R0, the result is placed in R0
+SRL - subtract from register Rx of register R0, the numbers of all registers are incremented, the result is placed in R0
 
-SRR - subtraction from register Rx of register R0, the result is placed in Rx
-SRP - subtraction from register Rx of register R0, the result is placed in Rx, all register numbers are decremented
+SRR - subtract from register Rx of register R0, the result is placed in Rx
+SRP - subtract from register Rx of register R0, the result is placed in Rx, all register numbers are decremented
+
+SBC - subtract from register R1 registers R0 and Rx, result is placed in R1, carry bits are placed in R0
+SCL - subtract from register R0 of register Rx, the result is placed in R0, the numbers of all registers are incremented, carry bits are placed in R0
+SCP - subtract from register R1 registers R0 and Rx, result is placed in R1, all register numbers are decremented
