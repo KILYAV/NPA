@@ -10,3 +10,13 @@
 +--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
 | substraction | SUB | SBL  | ...  | SBR | SRL  | SRP  | SBC | SCL  | SCP  | SCR | SRL  | SRP  |
 +--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
+
+ADD - addition of R0 and Rx, the result is placed in R0
+ADL - addition of R0 and Rx, the numbers of all registers are incremented, the result is placed in R0
+
+ADR - addition of R0 and Rx, the result is placed in Rx
+ARP - addition of R0 and Rx, result is placed in Rx, all register numbers are decremented
+
+ADC - addition R0, R1 and Rx, the result is placed in R1, the carry bits are placed in R0
+ACL - addition of R0 and Rx, the result is placed in R0, the numbers of all registers are incremented, the carry bits are placed in R0
+ACP - addition R0, R1 and Rx, the result is placed in R1, all register numbers are decremented
