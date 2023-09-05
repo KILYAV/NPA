@@ -10,35 +10,43 @@
 +--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
 | addition     | ADD | ADL  | ...  | ADR | ...  | ARP  | ... | ...  | ...  | ... | ...  | ...  | ADC | ACL  | ACP  | ... | ...  | ...  | ACR | ARL  | AR2  | ... | ...  | ...  |
 +--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
-| substraction | SUB | SBL  | ...  | SBR | ...  | SBP  | SRD | SRL  | ...  | SRR | ...  | SRP  | SBC | SCL  | SCP  | ... | ...  | ...  | SCR | SRL  | SRP  | ... | ...  | ...  |
+| substraction | SUB | SBL  | ...  | SBR | ...  | SBP  | SRD | SRL  | ...  | SRR | ...  | SRP  | SBC | SCL  | SCP  | SR2 | SL2  | SP2  | SCR | SRL  | SRP  | ... | ...  | ...  |
 +--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
 
-ADD - addition of R0 and Rx, the result is placed in R0
-ADL - addition of R0 and Rx, the numbers of all registers are incremented, the result is placed in R0
+ADD - add R0 and Rx, the result is placed in R0
+ADL - add R0 and Rx, all register numbers are incremented, the result is placed in R0
 
-ADR - addition of R0 and Rx, the result is placed in Rx
-ARP - addition of R0 and Rx, result is placed in Rx, all register numbers are decremented
+ADR - add R0 and Rx, the result is placed in Rx
+ARP - add R0 and Rx, result is placed in Rx, all register numbers are decremented
 
-ADC - addition R0, R1 and Rx, the result is placed in R1, the carry bits are placed in R0
-ACL - addition of R0 and Rx, the result is placed in R0, the numbers of all registers are incremented, the carry bits are placed in R0
-ACP - addition R0, R1 and Rx, the result is placed in R1, all register numbers are decremented
+ADC - add R0, R1 and Rx, the result is placed in R1, the carry bits are placed in R0
+ACL - add R0 and Rx, the result is placed in R0, all register numbers are incremented, the carry bits are placed in R0
+ACP - add R0, R1 and Rx, the result is placed in R1, all register numbers are decremented
 
-ACR - addition R0, R1 and Rx, the result is placed in Rx, the carry bits are placed in R0
-ARL - addition of R0 and Rx, the result is placed in Rx, the numbers of all registers are incremented, the carry bits are placed in R0
-AR2 - addition R0, R1 and Rx, the result is placed in Rx, all register numbers are decremented
+ACR - add R0, R1 and Rx, the result is placed in Rx, the carry bits are placed in R0
+ARL - add R0 and Rx, the result is placed in Rx, all register numbers are incremented, the carry bits are placed in R0
+AR2 - add R0, R1 and Rx, the result is placed in Rx, all register numbers are decremented
 
-SUB - subtract from register R0 of register Rx, the result is placed in R0
-SBL - subtract from register R0 of register Rx, the numbers of all registers are incremented, the result is placed in R0
+SUB - subtract from R0 of Rx, the result is placed in R0
+SBL - subtract from R0 of Rx, all register numbers are incremented, the result is placed in R0
 
-SBR - subtract from register R0 of register Rx, the result is placed in Rx
-SBP - subtract from register R0 of register Rx, result is placed in Rx, all register numbers are decremented
+SBR - subtract from R0 of Rx, the result is placed in Rx
+SBP - subtract from R0 of Rx, result is placed in Rx, all register numbers are decremented
 
-SRD - subtract from register Rx of register R0, the result is placed in R0
-SRL - subtract from register Rx of register R0, the numbers of all registers are incremented, the result is placed in R0
+SRD - subtract from Rx of R0, the result is placed in R0
+SRL - subtract from Rx of R0, all register numbers are incremented, the result is placed in R0
 
-SRR - subtract from register Rx of register R0, the result is placed in Rx
-SRP - subtract from register Rx of register R0, the result is placed in Rx, all register numbers are decremented
+SRR - subtract from Rx of R0, the result is placed in Rx
+SRP - subtract from Rx of R0, the result is placed in Rx, all register numbers are decremented
 
-SBC - subtract from register R1 registers R0 and Rx, result is placed in R1, carry bits are placed in R0
-SCL - subtract from register R0 of register Rx, the result is placed in R0, the numbers of all registers are incremented, carry bits are placed in R0
+SBC - subtract from R1 of R0 and Rx, result is placed in R1, carry bits are placed in R0
+SCL - subtract from R0 of Rx, the result is placed in R0, all register numbers are incremented, carry bits are placed in R0
+SCP - subtract from R1 registers R0 and Rx, result is placed in R1, all register numbers are decremented
+
+SR2 - subtract from R1 of R0 and Rx, result is placed in Rx, carry bits are placed in R0
+SL2 - subtract from R0 of Rx, the result is placed in Rx, all register numbers are incremented, carry bits are placed in R0
+SP2 - subtract from R1 registers R0 and Rx, result is placed in Rx, all register numbers are decremented
+
+SCR - subtract from Rx of R0 and R1, result is placed in R1, carry bits are placed in R0
+SCL - subtract from R0 of Rx, the result is placed in Rx, all register numbers are incremented, carry bits are placed in R0
 SCP - subtract from register R1 registers R0 and Rx, result is placed in R1, all register numbers are decremented
