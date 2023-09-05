@@ -10,7 +10,7 @@
 +--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
 | addition     | ADD | ADL  | ...  | ADR | ...  | ARP  | ... | ...  | ...  | ... | ...  | ...  | ADC | ACL  | ACP  | ... | ...  | ...  | ACR | ARL  | AR2  | ... | ...  | ...  |
 +--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
-| substraction | SUB | SBL  | ...  | SBR | ...  | SBP  | SRD | SRL  | ...  | SRR | ...  | SRP  | SBC | SCL  | SCP  | SR2 | SL2  | SP2  | SCR | SRL  | SRP  | ... | ...  | ...  |
+| substraction | SUB | SBL  | ...  | SBR | ...  | SBP  | SRD | SRL  | ...  | SRR | ...  | SRP  | SBC | SCL  | SCP  | SR2 | SL2  | SP2  | SCR | SRL  | SRP  | xxx | xxx  | xxx  |
 +--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
 
 ADD - add R0 and Rx, the result is placed in R0
@@ -50,3 +50,7 @@ SP2 - subtract from R1 registers R0 and Rx, result is placed in Rx, all register
 SCR - subtract from Rx of R0 and R1, result is placed in R1, carry bits are placed in R0
 SCL - subtract from Rx of R0, the result is placed in R1, all register numbers are incremented, carry bits are placed in R0
 SCP - subtract from Rx R0 and Rx, result is placed in R1, all register numbers are decremented
+
+xxx - 
+xxx - 
+xxx -
