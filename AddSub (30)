@@ -1,17 +1,17 @@
 08-bit instruction arithmetik (30)
-+--------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| carry        | non                                                                           | yes                                                                           |
-+--------------+---------------------------------------+---------------------------------------+---------------------------------------+---------------------------------------+
-| operand      | direction                             | revers                                | direction                             | revers                                |
-+--------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
-| result       | direction         | revers            | direction         | revers            | direction         | revers            | direction         | revers            |
-+--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
-| offset       | non | load | push | non | load | push | non | load | push | non | load | push | non | load | push | non | load | push | non | load | push | non | load | push |
-+--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
-| addition     | ADD | ADL  | ...  | ADR | ...  | ADP  | ... | ...  | ...  | ... | ...  | ...  | ADC | ACL  | ACP  | ... | ...  | ...  | ACR | ARL  | ARP  | ... | ...  | ...  |
-+--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
-| substraction | SUB | SBL  | ...  | SBR | ...  | SBP  | SRD | SRL  | ...  | SRR | ...  | SRP  | SBC | SCL  | SCP  | SR2 | SL2  | SP2  | SCR | SRL  | SRP  | xxx | xxx  | xxx  |
-+--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
++--------------+-------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| carry        | non                                                                           | yes                                                                                         |
++--------------+---------------------------------------+---------------------------------------+---------------------------------------------------------+---------------------------------------+
+| operand      | direction                             | revers                                | direction                                               | revers                                |
++--------------+-------------------+-------------------+-------------------+-------------------+-------------------------------------+-------------------+-------------------+-------------------+
+| result       | direction         | revers            | direction         | revers            | direction                           | revers            | direction         | revers            |
++--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+--------+------+--------+-----+------+------+-----+------+------+-----+------+------+
+| offset       | non | load | push | non | load | push | non | load | push | non | load | push | non | load | load-2 | push | push-2 | non | load | push | non | load | push | non | load | push |
++--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+--------+------+--------+-----+------+------+-----+------+------+-----+------+------+
+| addition     | ADD | ADL  | ...  | ADR | ...  | ADP  | ... | ...  | ...  | ... | ...  | ...  | ADC | ACL  | AL2    | ACP  | AP2    | ... | ...  | ...  | ACR | ARL  | ARP  | ... | ...  | ...  |
++--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+--------+------+--------+-----+------+------+-----+------+------+-----+------+------+
+| substraction | SUB | SBL  | ...  | SBR | ...  | SBP  | SRD | SRL  | ...  | SRR | ...  | SRP  | SBC | SCL  |        | SCP  |        | SR2 | SL2  | SP2  | SCR | SRL  | SRP  | xxx | xxx  | xxx  |
++--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+-----+------+--------+------+--------+-----+------+------+-----+------+------+-----+------+------+
 
 ADD - add R0 and Rx, the result is placed in R0
 ADL - add R0 and Rx, all register numbers are incremented, the result is placed in R0
@@ -20,8 +20,9 @@ ADR - add R0 and Rx, the result is placed in Rx
 ADP - add R0 and Rx, result is placed in Rx, all register numbers are decremented
 
 ADC - add R0, R1 and Rx, the result is placed in R1, the carry bits are placed in R0
-ACL - add R0 and Rx, the result is placed in R0, all register numbers are incremented, the carry bits are placed in R0
-ACP - add R0, R1 and Rx, the result is placed in R1, all register numbers are decremented
+ACL - add R0 and Rx, all register numbers are incremented, the result is placed in R1, the carry bits are placed in R0
+AL2 - add R0 and Rx, all register numbers are incremented twice, the result is placed in R1, the carry bits are placed in R0
+ACP - add R0, R1 and Rx, all register numbers are decremented, the result is placed in R0
 
 ACR - add R0, R1 and Rx, the result is placed in Rx, the carry bits are placed in R0
 ARL - add R0 and Rx, the result is placed in Rx, all register numbers are incremented, the carry bits are placed in R0
