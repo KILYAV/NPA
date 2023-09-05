@@ -1,9 +1,11 @@
 +----------------+---------------------+
-| operand        | direction           |
+| operand        | direction           | reversed
 +----------------+-----+------+--------+
 | offset         | non | Load | load-2 |
 +----------------+-----+------+--------+
 | multiplication | MUL | MLL  | ML2    |
 +----------------+-----+------+--------+
 
-MUL - multiplication R0 of Rx, the mayor word is placed in R0, the minor word is placed in Rx
+MUL - multiplication R0 of Rx, the minor word is placed in Rx, the mayor word is placed in R0
+MLL - multiplication R0 of Rx, all register numbers are incremented, the mayor word is placed in R0, the minor word is placed in R1
+ML2 - multiplication R0 of Rx, all register numbers are incremented twice, the mayor word is placed in R0, the minor word is placed in R1
