@@ -5,3 +5,5 @@
 +----------------+-----+------+--------+
 | multiplication | MUL | MLL  | ML2    |
 +----------------+-----+------+--------+
+
+MUL - multiplication R0 of Rx, the mayor word is placed in R0, the minor word is placed in Rx
