@@ -1,4 +1,4 @@
-08-bit instruction arithmetik (30)
+08-bit instruction arithmetik (36)
 +--------------+---------------------------------------+
 | carry        | non                                   |
 +--------------+---------------------------------------+
@@ -63,31 +63,34 @@ SRL - subtract from Rx of R0, all register numbers are incremented, the result i
 SRR - subtract from Rx of R0, the result is placed in Rx
 SRP - subtract from Rx of R0, the result is placed in Rx, all register numbers are decremented
 
-+--------------+-------------------------------------------------------------------------------------------------+
-| carry        | yes                                                                                             |
-+--------------+---------------------------------------------------------+---------------------------------------+
-| operand      | direction                                               | reversed                              |
-+--------------+----------------------------+----------------------------+-------------------+-------------------+
-| result       | direction                  | reversed                   | direction         | reversed          |
-+--------------+-----+------+--------+------+-----+------+------+--------+-----+------+------+-----+------+------+
-| offset       | non | load | load-2 | push | non | load | push | push-2 | non | load | push | non | load | push |
-+--------------+-----+------+--------+------+-----+------+------+--------+-----+------+------+-----+------+------+
-| substraction | SBC | SCL  | SL2    | SCP  | SR2 | SL2  | SP2  |        | SCR | SRL  | SRP  | xxx | xxx  | xxx  |
-+--------------+-----+------+--------+------+-----+------+------+--------+-----+------+------+-----+------+------+
++--------------+-------------------------------------------------------------------------------------------------------------------+
+| carry        | yes                                                                                                               |
++--------------+---------------------------------------------------------+---------------------------------------------------------+
+| operand      | direction                                               | reversed                                                |
++--------------+----------------------------+----------------------------+----------------------------+----------------------------+
+| result       | direction                  | reversed                   | direction                  | reversed                   |
++--------------+-----+------+--------+------+-----+------+------+--------+-----+------+--------+------+-----+------+------+--------+
+| offset       | non | load | load-2 | push | non | load | push | push-2 | non | load | load-2 | push | non | load | push | push-2 |
++--------------+-----+------+--------+------+-----+------+------+--------+-----+------+--------+------+-----+------+------+--------+
+| substraction | SBC | SCL  | SL2    | SCP  | SCR | SRL  | SRP  |  SP2   | SRD | SR2  | SL4    | SP4  | xxx | xxx  | xxx  | xxx    |
++--------------+-----+------+--------+------+-----+------+------+--------+-----+------+--------+------+-----+------+------+--------+
 
 SBC - subtract from R1 of R0 and Rx, result is placed in R1, carry bits are placed in R0
 SCL - subtract from R0 of Rx, all register numbers are incremented, the result is placed in R1, carry bits are placed in R0
 SL2 - subtract from R0 of Rx, all register numbers are incremented twice, the result is placed in R1, carry bits are placed in R0
 SCP - subtract from R1 registers R0 and Rx, all register numbers are decremented, result is placed in R0
 
-SR2 - subtract from R1 of R0 and Rx, result is placed in Rx, carry bits are placed in R0
-SL2 - subtract from R0 of Rx, the result is placed in Rx, all register numbers are incremented, carry bits are placed in R0
-SP2 - subtract from R1 registers R0 and Rx, result is placed in Rx, all register numbers are decremented
+SCR - subtract from R1 of R0 and Rx, result is placed in Rx, carry bits are placed in R0
+SRL - subtract from R0 of Rx, the result is placed in Rx, all register numbers are incremented, carry bits are placed in R0
+SRP - subtract from R1 of R0 and Rx, result is placed in Rx, all register numbers are decremented
+SP2 - subtract from R1 of R0 and Rx, result is placed in Rx, all register numbers are decremented twice
 
-SCR - subtract from Rx of R0 and R1, result is placed in R1, carry bits are placed in R0
-SCL - subtract from Rx of R0, the result is placed in R1, all register numbers are incremented, carry bits are placed in R0
-SCP - subtract from Rx R0 and Rx, result is placed in R1, all register numbers are decremented
+SRD - subtract from Rx of R0 and R1, result is placed in R1, carry bits are placed in R0
+SR2 - subtract from Rx of R0, all register numbers are incremented, the result is placed in R1, carry bits are placed in R0
+SL4 - subtract from Rx of R0, all register numbers are incremented twice, the result is placed in R1, carry bits are placed in R0
+SP4 - subtract from Rx of R1, all register numbers are decremented, result is placed in R0
 
 xxx - 
 xxx - 
+xxx -
 xxx -
