@@ -10,25 +10,24 @@ opcode   - five bits of opcode instructions, 32 instructions total
 register - number of registers, 4 register total
 
 16-bit instructions
-+-----------+----------+---------+-----------+-------+-------+----------+---------+-------+
-| ext.ins.1 | opcode.1 | reg.1.0 | ext.ins.2 | f.set | f.get | opcode.2 | reg.1.1 | reg.2 |
-+-----------+----------+---------+-----------+-------+-------+----------+---------+-------+
-|        15 |    14-10 |     9-8 |         7 |     6 |     5 |        4 |       3 |   2-0 |
-+-----------+----------+---------+-----------+-------+-------+----------+---------+-------+
++-----------+----------+-------+-----------+-------+-------+----------+-------+
+| ext.ins.1 | opcode.1 | reg.1 | ext.ins.2 | f.set | f.get | opcode.2 | reg.2 |
++-----------+----------+-------+-----------+-------+-------+----------+-------+
+|        15 |    14-10 |   9-8 |         7 |     6 |     5 |      4-3 |   2-0 |
++-----------+----------+-------+-----------+-------+-------+----------+-------+
 
 ext.ins.1 - first extended instruction bit, always set 1
 ext.ins.2 - second extended instruction bit, if the bit is reset, the instruction is 16-bit, if the bit is set, then the instruction is 32-bit
 opcode.1  - first five bits of opcode instructions
-opcode.2  - sixth bits of opcode instructions, 64 instructions total
-reg.1.0   - first too bits of first number registers
-reg.1.1   - third bits of number registers, 8 registers total
+opcode.2  - sixth bits of opcode instructions, 128 instructions total
+reg.1     - number of first registers, 4 register total
+reg.2     - number of second registers, 8 register total
 f.set     - set flags bit, if the bit is reset, then the instruction does not set the flags, if the bit is set, then the instruction sets the flags
 f.get     - get flags bit, if the bit is reset, then the instruction is executed unconditionally, if the bit is set, then the instruction is executed conditionally
-reg.2     - number of second registers, 8 register total
 
 32-bit instructions
-+-----------+----------+---------+-----------+-------+-------+----------+---------+-------+------------+
-| ext.ins.1 | opcode.1 | reg.1.0 | ext.ins.2 | f.set | f.get | opcode.2 | reg.1.1 | reg.2 |  ext.ins.3 |
-+-----------+----------+---------+-----------+-------+-------+----------+---------+-------+------------+
-|        31 |    30-26 |   25-24 |        23 |    22 |    21 |       20 |      19 | 18-16 |         15 |
-+-----------+----------+---------+-----------+-------+-------+----------+---------+-------+------------+
++-----------+----------+-------+-----------+-------+-------+----------+-------+------------+
+| ext.ins.1 | opcode.1 | reg.1 | ext.ins.2 | f.set | f.get | opcode.2 | reg.2 |  ext.ins.3 |
++-----------+----------+-------+-----------+-------+-------+----------+-------+------------+
+|        31 |    30-26 | 25-24 |        23 |    22 |    21 |    20-19 | 18-16 |         15 |
++-----------+----------+-------+-----------+-------+-------+----------+-------+------------+
