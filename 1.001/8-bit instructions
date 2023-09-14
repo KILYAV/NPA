@@ -1,0 +1,70 @@
++--------------+-------------------+-------------------+
+| result       | direction         | reversed          |
++--------------+-----+------+------+-----+------+------+
+| offset       | non | load | push | non | load | push |
++--------------+-----+------+------+-----+------+------+
+| addition     | ADD | ADL  | ...  | ADR | ...  | ADP  |
++--------------+-----+------+------+-----+------+------+
+
+ADD - add R0 and Rx, the result is placed in R0
+ADL - add R0 and Rx, all register numbers are incremented, the result is placed in R0
+
+ADR - add R0 and Rx, the result is placed in Rx
+ADP - add R0 and Rx, result is placed in Rx, all register numbers are decremented
+
++--------------+-------------------+-------------------+-------------------+-------------------+
+| result       | direction         | reversed          | direction         | reversed          |
++--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
+| offset       | non | load | push | non | load | push | non | load | push | non | load | push |
++--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
+| substraction | SUB | SBL  | ...  | SBR | ...  | SBP  | SRD | SRL  | ...  | SRR | ...  | SRP  |
++--------------+-----+------+------+-----+------+------+-----+------+------+-----+------+------+
+
+SUB - subtract from R0 of Rx, the result is placed in R0
+SBL - subtract from R0 of Rx, all register numbers are incremented, the result is placed in R0
+
+SBR - subtract from R0 of Rx, the result is placed in Rx
+SBP - subtract from R0 of Rx, result is placed in Rx, all register numbers are decremented
+
+SRD - subtract from Rx of R0, the result is placed in R0
+SRL - subtract from Rx of R0, all register numbers are incremented, the result is placed in R0
+
+SRR - subtract from Rx of R0, the result is placed in Rx
+SRP - subtract from Rx of R0, the result is placed in Rx, all register numbers are decremented
+
++--------------+-----+------+------+
+| offset       | non | load | push |
++--------------+-----+------+------+
+| not          | NOT | NTL  | ...  |
++--------------+-----+------+------+
+
+NOT - boolean not Rx, the result is placed in Rx
+NTL - boolean not Rx, all register numbers are incremented, the result is placed in R0
+
++--------------+-------------------+-------------------+
+| result       | direction         | reversed          |
++--------------+-----+------+------+-----+------+------+
+| offset       | non | load | push | non | load | push |
++--------------+-----+------+------+-----+------+------+
+| and          | AND | ANL  | ...  | ANR | ...  | ANP  |
++--------------+-----+------+------+-----+------+------+
+
+AND - boolean and R0 and Rx, the result is placed in R0
+ANL - boolean and R0 and Rx, all register numbers are incremented, the result is placed in R0
+
+ANR - boolean and R0 and Rx, the result is placed in Rx
+ANP - boolean and R0 and Rx, result is placed in Rx, all register numbers are decremented
+
++--------------+-------------------+-------------------+
+| result       | direction         | reversed          |
++--------------+-----+------+------+-----+------+------+
+| offset       | non | load | push | non | load | push |
++--------------+-----+------+------+-----+------+------+
+| orr          | ORN | ORL  | ...  | ORR | ...  | ORP  |
++--------------+-----+------+------+-----+------+------+
+
+ORN - boolean or R0 and Rx, the result is placed in R0
+ORL - boolean or R0 and Rx, all register numbers are incremented, the result is placed in R0
+
+ORR - boolean or R0 and Rx, the result is placed in Rx
+ORP - boolean or R0 and Rx, result is placed in Rx, all register numbers are decremented
