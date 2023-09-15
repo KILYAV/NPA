@@ -68,3 +68,38 @@ ORL - boolean or R0 and Rx, all register numbers are incremented, the result is 
 
 ORR - boolean or R0 and Rx, the result is placed in Rx
 ORP - boolean or R0 and Rx, result is placed in Rx, all register numbers are decremented
+
++--------------+-------------------+-------------------+
+| result       | direction         | reversed          |
++--------------+-----+------+------+-----+------+------+
+| offset       | non | load | push | non | load | push |
++--------------+-----+------+------+-----+------+------+
+| maximum      | MAX | MXL  | ...  | MXR | ...  | MXP  |
++--------------+-----+------+------+-----+------+------+
+
+MAX - selects maximum from R0 or Rx, the result placed R0
+MXL - selects maximum from R0 or Rx, all register numbers are incremented, the result placed R0
+MXR - selects maximum from R0 or Rx, the result placed Rx
+MXL - selects maximum from R0 or Rx, the result placed R0, all register numbers are decremented
+
++--------------+-------------------+-------------------+
+| result       | direction         | reversed          |
++--------------+-----+------+------+-----+------+------+
+| offset       | non | load | push | non | load | push |
++--------------+-----+------+------+-----+------+------+
+| minimum      | MIN | MNL  | ...  | MNR | ...  | MNP  |
++--------------+-----+------+------+-----+------+------+
+
+MNX - selects minimum from R0 or Rx, the result placed R0
+MNL - selects minimum from R0 or Rx, all register numbers are incremented, the result placed R0
+MNR - selects minimum from R0 or Rx, the result placed Rx
+MNL - selects minimum from R0 or Rx, the result placed R0, all register numbers are decremented
+
++--------------+-------------------+-------------------+
+| result       | direction         | reversed          |
++--------------+-----+------+------+-----+------+------+
+| offset       | non | load | push | non | load | push |
++--------------+-----+------+------+-----+------+------+
+| mov-push     | ... | MVP  | ...  | ... | ...  | ...  |
++--------------+-----+------+------+-----+------+------+
+
